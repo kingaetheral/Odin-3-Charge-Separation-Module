@@ -1,4 +1,5 @@
 How it works
+
 On install, the module probes for the kernel's native charge control interfaces:
 /sys/class/qcom-battery/charge_control_en
 /sys/class/power_supply/battery/charge_control_end_threshold
