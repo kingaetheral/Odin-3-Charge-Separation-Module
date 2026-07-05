@@ -1,6 +1,3 @@
-# Odin-3-Charge-Separation-Module
-Charge separation (bypass charging) for the Unihertz Odin 3. Keeps the battery at a target state of charge while the phone runs off the charger, reducing battery wear during long plugged-in sessions (navigation, hotspot duty, desk use, media boxes).
-
 How it works
 On install, the module probes for the kernel's native charge control interfaces:
 /sys/class/qcom-battery/charge_control_en
@@ -24,8 +21,9 @@ Tip: If separation never engages with TARGET=100, set TARGET=99 instead. Some ke
 Verifying it's working
 After reboot, plug in and let the battery reach your target. Check:
 
-cat /sys/class/power_supply/battery/charge_control_end_threshold
-cat /sys/class/power_supply/battery/charge_control_start_threshold
+ cat /sys/class/power_supply/battery/charge_control_end_threshold
+
+ cat /sys/class/power_supply/battery/charge_control_start_threshold
 
 The values should match your config, and the battery percentage should hold at the target while the device draws power from the charger.
 Uninstalling
